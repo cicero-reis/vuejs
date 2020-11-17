@@ -1,0 +1,41 @@
+<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+
+    <label for="nome">Nome:</label>
+    <input type="text" v-on:keyup="inputNome">
+
+    <br><br>
+
+    <label for="idade">Idade:</label>
+    <input type="text" v-on:keyup.enter="inputIdade">
+
+    <br><br>
+
+    <label for="email">E-mail:</label>
+    <input type="text" v-on:keyup.enter.alt="inputEmail">
+
+</div>
+
+<script>
+
+    new Vue({
+        el: '#app',
+        data: {
+
+        },
+        methods: {
+            inputNome: function() {
+                console.log('Input nome')
+            },
+            inputIdade: function() {
+                console.log('Input idade')
+            },
+            inputEmail: function() {
+                console.log('Input email')
+            }
+        }
+    })
+
+</script>

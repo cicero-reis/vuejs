@@ -1,0 +1,64 @@
+<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+
+    <p v-on:mousemove="atualizarXY">
+        Mouse 1: {{ x }} e {{ y }}
+        <span v-on:mousemove.stop="">PARAR AQUI!!!</span>
+    </p>
+
+    <br>
+
+    <p v-on:mousemove="atualizarAB">
+        Mouse 2: {{ a }} e {{ b }}
+        <span v-on:mousemove="parar">PARAR AQUI!!!</span>
+    </p>
+
+    <br>
+
+    <a v-on:click href="http://google.com.br" target="_blank">Google 1</a>
+
+    <br>
+
+    <a v-on:click.prevent href="http://google.com.br" target="_blank">Google 2</a>
+
+    <br>
+
+    <a v-on:click.stop.prevent href="http://google.com.br" target="_blank">Google 3</a>
+
+    <br>
+
+    <a v-on:click="funcaoParar" href="http://google.com.br" target="_blank">Google 4</a>
+
+</div>
+
+<script>
+
+    new Vue({
+        el: '#app',
+        data: {
+            x: 0,
+            y: 0,
+            a: 0,
+            b: 0
+        },
+        methods: {
+            atualizarXY: function(event) {
+                this.x = event.clientX
+                this.y = event.clientY
+            },
+            atualizarAB: function(event) {
+                this.a = event.clientX
+                this.b = event.clientY
+            },
+            parar: function(event) {
+                event.stopPropagation()
+            },
+            funcaoParar: function(event) {
+                event.preventDefault()
+            }
+        }
+    })
+
+</script>

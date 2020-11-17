@@ -1,0 +1,31 @@
+<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+
+    <h1>{{ titulo }}</h1>
+
+    <input type="text" v-on:input="alteraNome" name="nome" id="nome" data-nome placeholder="Digite seu nome" autocomplete="off">
+
+    <p>{{ nome }}</p>
+
+</div>
+
+<script>
+
+    new Vue({
+
+        el: '#app',
+        data: {
+            titulo: 'Formulario',
+            nome: ''
+        },
+        methods: {
+            alteraNome: function() {
+                this.nome = document.querySelector('[data-nome]').value
+            }
+        }
+
+    })
+
+</script>

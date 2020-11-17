@@ -1,0 +1,37 @@
+<meta charset="ut-8">
+
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app">
+
+    {{ titulo }} {{ novaInfo }}
+
+    <button @click="alterar">Alterar</button>
+
+</div>
+
+<script>
+
+    const mv = new Vue({
+
+        el: '#app',
+        data: {
+            titulo: 'Titulo 1'
+        },
+        methods: {
+            alterar() {
+                this.titulo += '!'
+            }
+        }
+    });
+
+    /*
+        [Vue warn]: Property or method "novaInfo" is not defined on the instance 
+        but referenced during render. 
+        Make sure that this property is reactive, either in the data option, 
+        or for class-based components, by initializing the property.
+    */
+    mv.novaInfo = 'Teste';
+    console.log('Teste');
+
+</script>

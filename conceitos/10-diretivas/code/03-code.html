@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>01 Diretivas</title>
+</head>
+<body>
+    <div id="app">
+
+        <pre>
+            Diretivas são basicamente como atributos HTML que são adicionados dentro de modelos.
+            Todos começam com v-, para indicar que é um atributo especial do Vue.
+        </pre> 
+
+        <pre>
+                <b>v-html</b> 
+                Quando você usa a interpolação para imprimir uma propriedade de dados, o HTML é escapado. 
+                Essa é uma ótima maneira que o Vue usa para proteger automaticamente contra ataques XSS.
+                Existem casos, no entanto, em que você deseja gerar HTML e fazer com que o navegador o interprete. 
+                Você pode usar a diretiva v-html:
+        </pre>
+    
+        <p v-html="paragraph"></p>
+
+
+    </div>
+    
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                paragraph: 'Usuando a diretiva v-html'
+            }
+        })
+    </script>
+
+</body>
+
+</html>

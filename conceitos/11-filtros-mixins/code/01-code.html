@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>01 Filters</title>
+</head>
+<body>
+
+    <div id="app">
+
+        <h1>Filtros & Mixins</h1>
+        <p>{{ cpfAluno | cpf }}</p>
+
+    </div>
+
+    <script>
+        
+        new Vue({
+            el: '#app',
+        
+            filters: {
+                cpf(valor) {
+                    const arr = valor.split('')
+                    arr.splice(3, 0, '.')
+                    arr.splice(7, 0, '.')
+                    arr.splice(11, 0, '-')
+                    return arr.join('')
+                }
+            },
+            data() {
+                return {
+                    cpfAluno: '12347895815'
+                }
+            }
+
+        })  
+            
+    </script>
+</body>
+
+</html>

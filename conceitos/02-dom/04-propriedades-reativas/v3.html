@@ -1,0 +1,58 @@
+<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+
+    <button v-on:click="aumentar">Aumentar</button>
+    <button v-on:click="contador2++">Aumentar 2</button>
+    <button v-on:click="diminuir">Diminuir</button>
+
+    <p>Contador: {{ contador }} | {{ contador2 }}</p>
+    <p>Resultado: {{ resultado }}</p>
+
+</div>
+
+<script>
+
+    new Vue({
+        el: '#app',
+        data: {
+            contador: 0,
+            contador2: 0,
+        },
+        /*
+            Síncrona
+            É uma propriedade 
+            Não pode haver conflito entre propriedades
+        */
+        computed: {
+            resultado() {
+                return this.contador >= 5 ?
+                    'Maior igual a 5' : 'Menor que 5'
+            }
+        },
+        /*
+            Assíncrona
+            É uma propriedade 
+            É deve haver conflito entre propriedade para monitorar
+        */
+        watch: {
+            contador(novo, antigo) {
+                console.log(novo, antigo)
+                //const instanceVue = this
+                setInterval( () => {
+                    this.contador = 0
+                }, 2000)
+            }
+        },
+        methods: {
+            aumentar() {
+                this.contador++
+            },
+            diminuir() {
+                this.diminuir--
+            }
+        }
+    })
+
+</script>

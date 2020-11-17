@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>01 Diretivas</title>
+</head>
+<body>
+
+    <pre>
+        Diretivas são basicamente como atributos HTML que são adicionados dentro de modelos.
+        Todos começam com v-, para indicar que é um atributo especial do Vue.
+    </pre> 
+
+    <p v-text="paragraph"></p>
+    
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                paragraph: 'Usuando a diretiva v-text</>'
+            }
+        })
+    </script>
+
+</body>
+
+</html>

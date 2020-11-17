@@ -1,0 +1,37 @@
+<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    
+    <input type="text" name="nome" v-on:input="alteraNome">
+    <input type="email" name="email" v-on:input="alteraEmail">
+
+    <br><br>
+
+    <dd>
+        <dt>Nome:</dt>
+        <dl>{{ nome }}</dl>
+        <dt>Email:</dt>
+        <dl>{{ email }}</dl>
+    </dd>
+
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            nome: '...',
+            email: '...'
+        },
+        methods: {
+            alteraNome(event) {
+                this.nome = event.target.value
+            },
+            alteraEmail(event) {
+                this.email = event.target.value
+            }
+        }
+
+    })
+</script>

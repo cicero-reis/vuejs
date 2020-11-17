@@ -1,0 +1,60 @@
+<meta charset="utf-8">
+<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<style>
+
+    /* ul {
+        list-style: none;
+    } */
+
+    h1, p {
+        display: inline;
+    }
+
+</style>
+
+<div id="app">
+
+    <ul>
+        <li v-for="pessoa in pessoas">
+            {{ pessoa.nome }}
+        </li>
+    </ul>
+    
+    <hr>
+
+    <ul>
+        <li v-for="pessoa in pessoas">
+            <div v-for="(valor, chave, index) in pessoa">
+                {{ chave }}  {{ valor }}  {{ index }}
+            </div>
+
+        </li>
+    </ul>
+
+</div>
+
+<script>
+
+    new Vue({
+        el: '#app',
+        data: {
+            cores: [
+                'vermelho',
+                'verde',
+                'amarelo',
+                'azul'
+            ],
+            pessoas: [
+                {
+                    nome: 'Cintia', idade: 48, peso: 80
+                },
+                {
+                    nome: 'Cicero', idade: 47, peso: 100
+                }
+            ]
+        }
+    })
+
+</script>

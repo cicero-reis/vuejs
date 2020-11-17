@@ -1,0 +1,39 @@
+<meta charset="utf-8">
+<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<style>
+    ul {
+        list-style: none;
+    }
+</style>
+
+<div id="app">
+    <ul>
+        <li v-for="(cor, indice) in cores">{{ indice }}) - {{ cor }}</li>
+    </ul>
+</div>
+
+<script>
+
+    new Vue({
+        el: '#app',
+        data: {
+            cores: [
+                'vermelho',
+                'verde',
+                'amarelo',
+                'azul'
+            ],
+            pessoas: [
+                {
+                    nome: 'Cintia', idade: 48, peso: 80
+                },
+                {
+                    nome: 'Cicero', idade: 47, peso: 100
+                }
+            ]
+        }
+    })
+
+</script>

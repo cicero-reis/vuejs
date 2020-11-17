@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+    <div id="app">
+        
+        <div class="container">
+        </div>
+        
+        <div class="container-fluid">
+
+            <h2>Form control: inline radio buttons</h2>
+            <p>The form below contains three inline radio buttons:</p>
+
+            <br>
+
+            <div class="row">
+                <form>
+        
+                    <div class="col-lg-4">
+                        <ul class="list-inline">
+                            <li class="list-inline-item">
+                                <input type="radio" name="optradio1" id="radio1" v-on:click="getValueNumber" value="1">
+                            </li>
+                            <li class="list-inline-item">
+                                <input type="number" class="form-control box1" id="number1" name="number1" value="" disabled> 
+                            </li>
+                            <li class="list-inline-item">
+                                <label for="radio1">Number 1</label>
+                            </li>
+                        </ul>
+                        <ul class="list-inline">
+                            <li class="list-inline-item">
+                                <input type="radio" name="optradio1" id="radio2" v-on:click="getValueNumber" value="2"> 
+                            </li>
+                            <li class="list-inline-item">
+                                <input type="number" class="form-control box1" id="number2" name="number2" value="" v-bind:class="box1" disabled> 
+                            </li>
+                            <li class="list-inline-item">
+                                <label for="radio3">Number 2</label>
+                            </li>
+                        </ul>
+        
+                        <ul class="list-inline">
+                            <li class="list-inline-item">
+                                <input type="radio" name="optradio1" id="radio3" v-on:click="getValueNumber" value="3">
+                            </li>
+                            <li class="list-inline-item">
+                                <input type="number" class="form-control box1" id="number3" name="number3" value="" disabled> 
+                            </li>
+                            <li class="list-inline-item">
+                                <label for="radio3">Number 3</label>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="col-lg-4">
+
+                        <ul class="list-inline">
+                            <li class="list-inline-item">
+                                <input type="radio" name="optradio2" id="radio4" v-on:click="getValueNumber" value="4">
+                            </li>
+                            <li class="list-inline-item">
+                                <input type="number" class="form-control " id="number4" name="number4" value="" disabled> 
+                            </li>
+                            <li class="list-inline-item">
+                                <label for="radio4">Number 4</label>
+                            </li>
+                        </ul>
+                        <ul class="list-inline">
+                            <li class="list-inline-item">
+                                <input type="radio" name="optradio2" id="radio5" v-on:click="getValueNumber" value="5">
+                            </li>
+                            <li class="list-inline-item">
+                                <input type="number" class="form-control" id="number5" name="number5" value="" disabled> 
+                            </li>
+                            <li class="list-inline-item">
+                                <label for="radio5">Number 5</label>
+                            </li>
+                        </ul>
+        
+                        <ul class="list-inline">
+                            <li class="list-inline-item">
+                                <input type="radio" name="optradio2" id="radio6" v-on:click="getValueNumber" value="6">
+                            </li>
+                            <li class="list-inline-item">
+                                <input type="number" class="form-control" id="number6" name="number6" value="" disabled> 
+                            </li>
+                            <li class="list-inline-item">
+                                <label for="radio6">Number 6</label>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <div class="col-lg-4">
+
+                        <ul class="list-inline">
+                            <li class="list-inline-item">
+                                <input type="radio" name="optradio3" id="radio7" v-on:click="getValueNumber" value="7">
+                            </li>
+                            <li class="list-inline-item">
+                                <input type="number" class="form-control " id="number7" name="number7" value="" disabled> 
+                            </li>
+                            <li class="list-inline-item">
+                                <label for="radio7">Number 7</label>
+                            </li>
+                        </ul>
+                        <ul class="list-inline">
+                            <li class="list-inline-item">
+                                <input type="radio" name="optradio3" id="radio8" v-on:click="getValueNumber" value="8">
+                            </li>
+                            <li class="list-inline-item">
+                                <input type="number" class="form-control" id="number8" name="number8" value="" disabled> 
+                            </li>
+                            <li class="list-inline-item">
+                                <label for="radio8">Number 8</label>
+                            </li>
+                        </ul>
+        
+                        <ul class="list-inline">
+                            <li class="list-inline-item">
+                                <input type="radio" name="optradio3" id="radio9" v-on:click="getValueNumber" value="9">
+                            </li>
+                            <li class="list-inline-item">
+                                <input type="number" class="form-control" id="number9" name="number9" value="" disabled> 
+                            </li>
+                            <li class="list-inline-item">
+                                <label for="radio9">Number 9</label>
+                            </li>
+                        </ul>
+
+                    </div>
+        
+                </form>
+
+            </div>
+
+        </div>
+    
+    </div>
+</body>
+</html>
+
+
+<script>
+
+    new Vue({
+        el: '#app',
+        data: {
+           
+        },
+        props: {
+            
+        },
+        methods: {
+            getValueNumber() {                
+                this.desabilita(event.path[0]['id'])
+                this.apagaNumber(event.path[0]['id'])
+            },
+            desabilita(input) {
+                switch(input) {
+                    case 'radio1':
+                        number1.disabled = false
+                        number2.disabled = true
+                        number3.disabled = true
+                        break
+                    case 'radio2':
+                        number2.disabled = false
+                        number1.disabled = true
+                        number3.disabled = true
+                        break
+                    case 'radio3':
+                        number3.disabled = false
+                        number1.disabled = true
+                        number2.disabled = true
+                        break
+                    case 'radio4':
+                        number4.disabled = false
+                        number5.disabled = true
+                        number6.disabled = true
+                        break
+                    case 'radio5':
+                        number5.disabled = false
+                        number4.disabled = true
+                        number6.disabled = true
+                        break
+                    case 'radio6':
+                        number6.disabled = false
+                        number4.disabled = true
+                        number5.disabled = true
+                        break
+                    case 'radio7':
+                        number7.disabled = false
+                        number8.disabled = true
+                        number9.disabled = true
+                        break
+                    case 'radio8':
+                        number8.disabled = false
+                        number7.disabled = true
+                        number9.disabled = true
+                        break
+                    case 'radio9':
+                        number9.disabled = false
+                        number7.disabled = true
+                        number8.disabled = true
+                        break
+                    default: 
+                        console.log('Ok')
+                }
+            },
+            apagaNumber(input) {
+                switch(input) {
+                    case 'radio1':
+                        number2.value = ''
+                        number3.value = ''
+                        break
+                    case 'radio2':
+                        number1.value = ''
+                        number3.value = ''
+                        break
+                    case 'radio3':
+                        number1.value = ''
+                        number2.value = ''
+                    case 'radio4':
+                        number5.value = ''
+                        number6.value = ''
+                        break
+                    case 'radio5':
+                        number4.value = ''
+                        number6.value = ''
+                        break
+                    case 'radio6':
+                        number4.value = ''
+                        number5.value = ''
+                        break
+                    case 'radio7':
+                        number8.value = ''
+                        number9.value = ''
+                        break
+                    case 'radio8':
+                        number7.value = ''
+                        number9.value = ''
+                        break
+                    case 'radio9':
+                        number7.value = ''
+                        number8.value = ''
+                        break
+                    default: 
+                        console.log('Ok')
+                }
+            }
+        }
+    })
+
+</script>
+
+<style>
+
+
+</style>

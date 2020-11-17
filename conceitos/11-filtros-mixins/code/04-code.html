@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>03 Filters</title>
+</head>
+<body>
+
+    <div id="app">
+
+        <h1>Filtros & Mixins</h1>
+        
+        <ul>
+
+            <li v-for="fruta in frutas" :key="fruta">{{ fruta }}</li>
+
+        </ul>
+
+        <input type="text" v-model="fruta" @keydown.enter="add">
+
+
+    </div>
+
+    <script>
+        
+        new Vue({
+            el: '#app',
+            
+            data() {
+                return {
+                    fruta: '',
+                    frutas: ['banana', 'laranja', 'pera']
+                }
+            },
+            methods: {
+                add() {
+                    this.frutas.push(this.fruta)
+                    this.fruta = ''
+                }
+            }
+
+        })  
+            
+    </script>
+</body>
+
+</html>
